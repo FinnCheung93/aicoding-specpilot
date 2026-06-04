@@ -23,6 +23,19 @@ AI Coding 规范文档用于把已经清楚的 PRD 转成轻量 Specs。
 它不替代 PRD，而是把产品需求整理成更便于 AI Coding Agent 分段读取、引用和执行的结构。
 ```
 
+## 🧭 PM 工作流系列
+
+这一组 Skills 用来把产品想法逐步推进到 AI Coding 可执行状态。推荐顺序是：地基 → PRD → Spec → 原型。
+
+| 顺序 | Skill | 作用 |
+|---|---|---|
+| 1 | [AI Coding 地基](https://github.com/FinnCheung93/aicoding-foundation) | 项目开工前，初始化原则、状态、日志和协作治理 |
+| 2 | [PM PRD 助手](https://github.com/FinnCheung93/pm-prd-copilot) | 澄清、撰写、修订和审查开发可落地的 PRD |
+| 3 | [AI Coding 规范文档](https://github.com/FinnCheung93/aicoding-specpilot) | 基于 PRD 生成更适合 AI Coding 读取的规格文档 |
+| 4 | [PM 原型助手](https://github.com/FinnCheung93/finn-protopilot) | 基于 PRD / Spec 生成产品走查原型和演示材料 |
+
+<sub>也可以单独调用其中任意一个 Skill，不一定必须按完整链路使用。</sub>
+
 ## ✨ 它能帮你做什么
 
 - 从清晰 PRD 中提炼基础 Specs
@@ -54,17 +67,6 @@ AI Coding 规范文档用于把已经清楚的 PRD 转成轻量 Specs。
 - 不负责工程架构、API 合同或测试用例设计
 - 不在 PRD 不清楚时编造需求
 - 不把规格文档写成过重的实现计划
-
-## 🧭 PM 工作流系列
-
-这一组 Skills 用来把产品想法逐步推进到 AI Coding 可执行状态：
-
-- [AI Coding 地基](https://github.com/FinnCheung93/aicoding-foundation)：项目开工前，初始化原则、状态、日志和协作治理。
-- [PM PRD 助手](https://github.com/FinnCheung93/pm-prd-copilot)：澄清、撰写、修订和审查开发可落地的 PRD。
-- [AI Coding 规范文档](https://github.com/FinnCheung93/aicoding-specpilot)：基于 PRD 生成更适合 AI Coding 读取的规格文档。
-- [PM 原型助手](https://github.com/FinnCheung93/finn-protopilot)：基于 PRD / Spec 生成产品走查原型和演示材料。
-
-推荐顺序：地基 → PRD → Spec → 原型。实际使用时也可以单独调用其中任意一个 Skill。
 
 ## 📦 使用方式
 
