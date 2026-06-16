@@ -11,8 +11,8 @@ description: >-
   provide analysis and do not write files.
 metadata:
   short-description: Build PRD-first AI-coding-ready Specs
-  version: v1.0.0
-  updated: 2026-06-04
+  version: v1.1.0
+  updated: 2026-06-16
 ---
 
 # AI Coding SpecPilot
@@ -36,6 +36,7 @@ Intake Gate
 -> Language Lock
 -> PRD Readiness Check
 -> PRD Readiness Summary
+-> PRD Coverage Pass
 -> Write Authorization
 -> Specs Generation
 -> Quality Gates
@@ -135,6 +136,21 @@ Base Specs 只写长期复用内容。
 如果一条内容不能被多个版本、多个 AI Coding 行动稳定复用，就不要进入 Base。
 ```
 
+## 3.1 PRD Coverage Pass
+
+Base 严格准入不能导致 PRD 信息静默丢失。生成 Specs 前，必须做一次轻量 **PRD Coverage Pass**：
+
+- 识别 PRD 中的关键需求、约束、体验原则、用户路径、状态、文案规则、边界情况和验收口径。
+- 判断每类内容的去向：进入某份 Base Spec、保留在 PRD、标为 pending（可注明 `base-candidate`），或交给后续专业文档。
+- 不要求生成完整追踪矩阵，但必须能解释重要 PRD 信息为什么进入、暂不进入或不能进入 Base。
+- PRD 中被识别为产品要求的内容不得无解释消失。即使不进入 Base，也要在 `SPECS/README.md` 的 coverage notes 或最终交付报告中说明去向。
+
+判断测试：
+
+```text
+如果用户追问“PRD 里的这条要求去哪了？”，Specs 或交付报告应能回答。
+```
+
 ## 4. 语言规则
 
 默认使用用户或目标项目的主语言生成正文。当前用户使用中文时，Specs 正文必须自然使用中文；文件名、目录名和少量稳定术语保留英文。
@@ -191,19 +207,20 @@ SPECS/
 
 - 只有用户明确要求创建、重组、更新、生成或“应用”时，才写入文件。
 - 如果用户只是问“怎么看”“是否合理”“应该怎么规划”，只输出分析和建议。
-- 写文件前先完成 PRD Source Detection、Language Lock、PRD Readiness Check 和 PRD Readiness Summary。
+- 写文件前先完成 PRD Source Detection、Language Lock、PRD Readiness Check、PRD Readiness Summary 和 PRD Coverage Pass。
 - 如需写文件，再确认 Write Authorization。写文件授权不能替代 PRD Readiness Check。
 - 如果只有 PRD 之外的模糊材料，先做 PRD gap 分析，不要直接改写为权威 Specs。
 - 不静默覆盖已有 Specs。
 - 不机械填模板。没有结论的章节可以标为 pending、合理省略，或在 `assumption-based v0` 中明确假设。
 - 默认不生成工程侧专业文档。
 - `SPECS/README.md` 必须说明 PRD 权威关系、AI Coding 渐进式读取规则和 Spec Change Rules。
+- PRD 中的关键产品要求不能因为 Base 严格准入而静默消失；不进入 Base 的内容也要说明保留在 PRD、标为 pending（可注明 `base-candidate`），或交给后续专业文档。
 
 ## 8. Reference Loading
 
 不要默认读取全部 references。按任务加载：
 
-- PRD readiness、PRD gaps、是否可生成 -> [references/requirement-clarification.md](references/requirement-clarification.md)
+- PRD readiness、PRD gaps、PRD Coverage Pass、是否可生成 -> [references/requirement-clarification.md](references/requirement-clarification.md)
 - Base Specs 结构 -> [references/base-spec-outline.md](references/base-spec-outline.md)
 - Legacy Version Spec -> [references/version-spec-template.md](references/version-spec-template.md)
 - Optional advanced change log -> [references/spec-changes-template.md](references/spec-changes-template.md)
@@ -254,6 +271,7 @@ SPECS/
 - 已识别 PRD Source，并在 README 中写明权威关系。
 - 已完成 PRD Readiness Summary，或已声明 `assumption-based v0` 并标注 assumptions / pending / conflicts。
 - PRD Readiness Summary 覆盖版本目标、目标用户、范围边界、用户路径、验收口径。
+- 已完成 PRD Coverage Pass，重要 PRD 信息没有无解释丢失。
 - 如果 PRD 缺关键项，是否先报告了 PRD gaps，而不是在 Specs 中伪造结论。
 - Base Specs 没有复制 PRD 的一次性版本需求。
 - 默认没有生成 `versions/` 或 `spec-changes/`。

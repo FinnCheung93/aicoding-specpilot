@@ -44,6 +44,7 @@ SPECS/
 - 阅读顺序。
 - AI Coding 渐进式读取规则。
 - Base Specs 准入规则。
+- PRD Coverage Notes。
 - Spec Change Rules。
 - 后续建议补充的专业文档。
 
@@ -53,6 +54,9 @@ SPECS/
 - Specs 与 PRD 冲突时，回到 PRD 裁决或同步修正 Specs。
 - 不要一次性把所有 Specs 全部加载进上下文；应按任务读取相关文档。
 - Agent 不得静默修改 Base Specs；发现缺口先提出 change candidate。
+- PRD 中不进入 Base 的重要产品要求，应说明是保留在 PRD、标为 pending / conflict，还是交给后续专业文档。
+
+Coverage notes 保持简短，不要把 README 变成完整追踪矩阵。它只记录高影响、高风险、用户可感知或影响验收的 PRD 要点去向。
 
 ## 4. 01-product-definition.md
 

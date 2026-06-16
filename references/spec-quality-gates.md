@@ -13,6 +13,8 @@
 - **PRD Source & Authority 已写明**：PRD 是版本需求权威，Specs 是派生规范；冲突时回到 PRD 裁决或同步修正 Specs。
 - **PRD Readiness Check 已完成**：生成前必须有 PRD Readiness Summary；或用户明确授权直接生成，并声明 `assumption-based v0`。
 - **PRD Readiness Summary 覆盖最低面**：版本目标、目标用户、范围边界、用户路径、验收口径。
+- **PRD Coverage Pass 已完成**：PRD 中的关键产品要求、体验原则、边界和验收口径有明确去向。
+- **No Silent Drop**：不进入 Base 的重要 PRD 信息也要说明保留在 PRD、标为 pending/conflict，或交给后续专业文档。
 - **PRD gaps 未被伪造成结论**：缺失、冲突或推断内容必须标为 gap / pending / assumption / conflict。
 - **Base 严格准入**：Base Specs 只收跨版本、跨 AI Coding 行动稳定复用的内容。
 - **没有重复版本 PRD**：默认不把 PRD 的一次性版本目标、范围、路径和验收复制进 Base。
@@ -38,6 +40,8 @@
 - 是否保留 PRD source，避免把输入材料洗成无来源结论。
 - 是否说明 PRD 与 Specs 的权威关系。
 - 是否检查 PRD 包含版本目标、目标用户、范围边界、用户路径、验收口径。
+- 是否对 PRD 中的关键需求、体验要求、边界、状态、文案和验收口径做了 coverage 判断。
+- 是否能回答“PRD 里的这条要求去哪了”。
 - 如果 PRD 不完整，是否先报告 PRD gaps，而不是直接补造需求。
 - 如果跳过提问，是否满足用户明确授权，并标注 assumptions / pending / conflicts。
 - 是否避免把 PRD 中的一次性版本需求提升为 Base。
@@ -81,6 +85,7 @@ Base Specs 应稳定、严格、可长期复用。
 
 - 是否写入了过多某个 PRD 版本的临时范围。
 - 是否把版本暂缓项写成长期非目标。
+- 是否把不适合进入 Base 的 PRD 内容说明为 `kept-in-prd`、`pending`、`conflict` 或 `excluded-with-reason`，而不是直接遗漏。
 - 是否让状态、文案、边界情况有统一词汇。
 - 是否避免重复定义。
 - 是否保留后续专业文档建议，但没有替代专业文档。
