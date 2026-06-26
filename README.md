@@ -9,13 +9,13 @@
 
 <br>
 
-<p><kbd>Codex Skill</kbd> <kbd>Version v1.1.0</kbd> <kbd>Language 中文</kbd> <kbd>Series PM Workflow</kbd></p>
+<p><kbd>Codex Skill</kbd> <kbd>Version v1.2.0</kbd> <kbd>Language 中文</kbd> <kbd>Series PM Workflow</kbd></p>
 
 </div>
 
 ```text
-AI Coding 规范文档用于把已经清楚的 PRD 转成轻量 Specs。
-它不替代 PRD，而是把产品需求整理成更便于 AI Coding Agent 分段读取、引用和执行的结构。
+AI Coding 规范文档用于把已经清楚的 PRD 转成 SDD-ready Specs。
+它不替代 PRD，而是把版本需求整理成当前版本可执行的 Version Specs，以及长期可复用的 Base Specs。
 ```
 
 ## 🧭 PM 工作流系列
@@ -33,10 +33,11 @@ AI Coding 规范文档用于把已经清楚的 PRD 转成轻量 Specs。
 
 ## ✨ 它能帮你做什么
 
-- 从清晰 PRD 中提炼基础 Specs
+- 从清晰 PRD 中生成当前版本的 Version Specs
+- 从版本需求中提炼长期稳定的 Base Specs
 - 把产品需求拆成更适合 AI Coding 的阅读单元
 - 保留产品侧语义，不扩写成技术架构
-- 记录版本需求、变更点和质量检查项
+- 记录 PRD 覆盖去向、Base 候选和质量检查项
 - 帮助后续实现、审查和原型工作复用同一份规格上下文
 
 ## 🧭 适用场景
@@ -45,7 +46,7 @@ AI Coding 规范文档用于把已经清楚的 PRD 转成轻量 Specs。
 - 一个版本需求比较复杂，需要拆成更稳定的规格结构
 - 希望后续实现时少依赖长篇 PRD 反复检索
 - 希望把产品需求和工程实现之间的语义层补齐
-- 需要为增量版本留下清楚的变更说明
+- 需要为增量版本留下清楚的执行规格和 Base 候选
 
 ## 🧩 工作方式
 
@@ -53,7 +54,8 @@ AI Coding 规范文档用于把已经清楚的 PRD 转成轻量 Specs。
 
 - 先做语言锁定和 PRD 就绪检查
 - PRD 缺口明显时，先指出缺口而不是硬写
-- PRD 足够清楚时，生成轻量 Base Specs
+- PRD 足够清楚时，生成轻量 Version Specs + Base Specs
+- 生成后做 PRD 覆盖检查和 Review-Act 质量检查
 - 保持产品侧规格，不越界到架构、接口和测试矩阵
 
 ## 🚦 边界

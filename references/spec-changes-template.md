@@ -2,7 +2,7 @@
 
 `spec-changes/` 是 optional advanced flow，不是默认输出。
 
-默认情况下，轻量 Spec Change Rules 写在 `SPECS/README.md` 中即可：
+默认情况下，Base 演进先由 `SPECS/versions/<version>/base-candidates.md` 承载，轻量 Spec Change Rules 写在 `SPECS/README.md` 中即可：
 
 - Agent 不得静默修改 Base Specs。
 - 发现缺口先提出 change candidate。
@@ -37,7 +37,7 @@ Detect -> Propose -> Review -> Promote
 ## 3. Rules
 
 - Agent 不得静默修改 Base Specs。
-- 每个 candidate 必须说明来源、影响和推荐处理。
+- 每个 candidate 必须说明来源、影响和推荐处理；来源可以是某个 Version Spec 的 `base-candidates.md`。
 - 用户或产品 owner 确认后，才可 Promote。
 - 被拒绝或暂缓的 candidate 必须保留状态。
 
@@ -115,6 +115,7 @@ Detect -> Propose -> Review -> Promote
 ## 5. 不应创建 candidate 的情况
 
 - 只是某个版本 PRD 的新增范围。
+- 已能在当前 Version Spec 的 `base-candidates.md` 轻量记录。
 - 只是实现细节、API 细节、测试用例或安全策略细节。
 - 用户尚未确认是否需要长期复用。
 - 可以直接在当前 PRD 中解决。
